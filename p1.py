@@ -7,3 +7,5 @@ def main():
         if x%3 == 0 or x%5 == 0:
             l.append(x)
     return functools.reduce(lambda x, y: x+y, l)
+
+main()
