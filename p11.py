@@ -8,24 +8,24 @@ class grid():
         self.g = np.loadtxt("p11.txt", np.int32)
 
     def up(self, i, j):
-        if j < 3:
+        if i > 16:
             return None
-        return self.g[i, j]*self.g[i, j-1]*self.g[i, j-2]*self.g[i, j-3]
+        return self.g[i, j]*self.g[i+1, j]*self.g[i+2, j]*self.g[i+3, j]
 
     def down(self, i, j):
-        if j > 16:
-            return None
-        return self.g[i, j]*self.g[i, j+1]*self.g[i, j+2]*self.g[i, j+3]
-
-    def left(self, i, j):
         if i < 3:
             return None
         return self.g[i, j]*self.g[i-1, j]*self.g[i-2, j]*self.g[i-3, j]
 
-    def right(self, i, j):
-        if i > 16:
+    def left(self, i, j):
+        if j < 3:
             return None
-        return self.g[i, j]*self.g[i+1, j]*self.g[i+2, j]*self.g[i+3, j]
+        return self.g[i, j]*self.g[i, j-1]*self.g[i, j-2]*self.g[i, j-3]
+
+    def right(self, i, j):
+        if j > 16:
+            return None
+        return self.g[i, j]*self.g[i, j+1]*self.g[i, j+2]*self.g[i, j+3]
 
     def left_diagonal(self, i, j):
         if i < 3 or j > 16:
