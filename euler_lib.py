@@ -50,3 +50,16 @@ def miller_rabin(n):
         if not miller_rabin_pass(a, s, d, n):
             return False
     return True
+
+
+# http://stackoverflow.com/questions/3939660/sieve-of-eratosthenes-finding-primes-python
+def primes(limit):
+    """Sieve of Eratosthenes"""
+    a = [True] * limit
+    a[0] = a[1] = False
+
+    for (i, isprime) in enumerate(a):
+        if isprime:
+            yield i
+            for n in xrange(2*i, limit, i):
+                a[n] = False
