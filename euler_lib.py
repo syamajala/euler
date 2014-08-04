@@ -63,3 +63,13 @@ def primes(limit):
             yield i
             for n in xrange(2*i, limit, i):
                 a[n] = False
+
+
+def list_to_num(l):
+    return sum(map(lambda x: x[0]*10**x[1], zip(l, reversed(range(0, len(l))))))
+
+
+def pandigital(n):
+    p = range(1, len(n)+1)
+    if all(map(lambda x: x in n, p)):
+        return list_to_num(n)

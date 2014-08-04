@@ -2,14 +2,10 @@ import euler_lib
 from multiprocessing import Pool
 
 
-def list_to_num(l):
-    return sum(map(lambda x: x[0]*10**x[1], zip(l, reversed(range(0, len(l))))))
-
-
 def lefttoright(n):
 
     s = [n[i:] for i in range(0, len(n))]
-    ns = map(list_to_num, s)
+    ns = map(euler_lib.list_to_num, s)
     p = map(euler_lib.miller_rabin, ns)
     return all(p)
 
@@ -17,7 +13,7 @@ def lefttoright(n):
 def righttoleft(n):
 
     s = [n[:i] for i in reversed(range(1, len(n)+1))]
-    ns = map(list_to_num, s)
+    ns = map(euler_lib.list_to_num, s)
     p = map(euler_lib.miller_rabin, ns)
     return all(p)
 
