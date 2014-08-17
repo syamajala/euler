@@ -24,7 +24,7 @@ def truncatable(p):
         return None
 
     if lefttoright(p) and righttoleft(p):
-        return list_to_num(p)
+        return euler_lib.list_to_num(p)
 
 
 if __name__ == '__main__':

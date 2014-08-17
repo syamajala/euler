@@ -65,6 +65,13 @@ def primes(limit):
                 a[n] = False
 
 
+def num_to_list(n):
+    l = str(n)
+    l = list(l)
+    l = map(int, l)
+    return l
+
+
 def list_to_num(l):
     return sum(map(lambda x: x[0]*10**x[1], zip(l, reversed(range(0, len(l))))))
 
