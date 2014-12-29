@@ -12,6 +12,6 @@ def main():
 
     r = map(equal_factorial, range(3, 100000))
     r = [i for i in r if i is not None]
-    print sum(r)
+    print(sum(r))
 
 main()

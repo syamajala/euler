@@ -49,6 +49,6 @@ class grid():
 
 def main():
     g = grid()
-    print g.solve()
+    print(g.solve())
 
 main()

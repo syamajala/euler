@@ -19,6 +19,6 @@ class namelist():
 def main():
     n = namelist()
     s = map(n.name_value, n.names)
-    print sum(s)
+    print(sum(s))
 
 main()

@@ -1,14 +1,8 @@
-import itertools
 import euler_lib
-from multiprocessing import Pool
 
 
-def circular(p):
-    if all(map(euler_lib.miller_rabin, p)):
-        return p
-
-
-def rotate(p):
+def rotate(l):
+    p = list(l)
     n = len(p)
     r = [p]
     for i in range(1, n):
@@ -23,10 +17,9 @@ def main():
     p = map(list, p)
     p = map(lambda x: map(int, x), p)
     p = map(rotate, p)
-    p = map(lambda x: map(euler_lib.list_to_num, x), p)
-    r = map(circular, p)
-    r = [j for i in r if i is not None for j in i]
-    r = set(r)
-    print len(r)
+    p = map(lambda x: list(map(euler_lib.list_to_num, x)), p)
+    r = filter(lambda x: all(map(euler_lib.miller_rabin, x)), p)
+    r = list(r)
+    print(len(r))
 
 main()

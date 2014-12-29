@@ -10,8 +10,8 @@ def factorial():
 def main():
     f = factorial()
     for i in range(1, 100):
-        f.next()
-    r = f.next()
-    print sum(map(int, list(str(r))))
+        next(f)
+    r = next(f)
+    print(sum(map(int, list(str(r)))))
 
 main()

@@ -36,4 +36,4 @@ if __name__ == '__main__':
     p = map(lambda x: map(int, x), p)
     r = pl.map(truncatable, p)
     r = [i for i in r if i is not None]
-    print sum(r)
+    print(sum(r))

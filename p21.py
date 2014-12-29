@@ -21,9 +21,9 @@ if __name__ == '__main__':
     r = p.map(d, n)
     a = p.map(amicable, r)
     a = [i for i in a if i]
-    print a
+    print(a)
 
     s = 0
     for i in a:
         s = s + i[0]
-    print s
+    print(s)

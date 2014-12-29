@@ -23,4 +23,4 @@ if __name__ == '__main__':
 
     coeffs = itertools.product(a, b)
     r = p.map(max_primes, coeffs)
-    print max(r, key=itemgetter(2))
+    print(max(r, key=itemgetter(2)))

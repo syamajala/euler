@@ -4,8 +4,8 @@ def main():
         if sum_of_fifths(map(int, str(i))) == i:
             r.append(i)
 
-    print r
-    print sum(r)
+    print(r)
+    print(sum(r))
 
 
 def sum_of_fifths(l):

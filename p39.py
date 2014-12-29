@@ -22,4 +22,5 @@ if __name__ == '__main__':
     p = Pool()
     solns = p.map(lengths, range(1, 1001))
     r = map(len, solns)
-    print r.index(max(r))+1
+    r = list(r)
+    print(r.index(max(r))+1)
